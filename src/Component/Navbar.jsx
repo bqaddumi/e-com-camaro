@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
@@ -8,7 +8,6 @@ export const Navbar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-
         <li>
           <Link to="/about">About</Link>
         </li>
