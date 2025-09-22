@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Component/Home";
 import { About } from "./Component/About";
 import { Contact } from "./Component/Contact";
+import CartComponent from './Components/CartComponent';
+
 
 export const App = () => {
   return (
@@ -14,6 +16,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<CartComponent />} />
       </Routes>
     </div>
   );

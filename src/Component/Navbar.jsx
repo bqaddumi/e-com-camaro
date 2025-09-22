@@ -16,6 +16,9 @@ export const Navbar = () => {
           <Link to="/contact">Contact</Link>
         </li>
       </ul>
+        <li>
+          <Link to="/cart">cart</Link>
+        </li>
     </nav>
   );
 };
