@@ -3,7 +3,7 @@ import CartComponent from './Components/CartComponent';
 function App() {
   return (
     <div>
-    setup redux 
+    setup redux   
       <CartComponent/>
     </div>
    
