@@ -13,10 +13,10 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Setup:
 
-`` clone git@github.com:bqaddumi/e-com-camaro.git ``
+`clone git@github.com:bqaddumi/e-com-camaro.git`
 
-``cd ./e-com-camaro``
+`cd ./e-com-camaro`
 
-``npm i``
+`npm i`
 
-``npm run dev``
+`npm run dev`
