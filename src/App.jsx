@@ -1,24 +1,23 @@
-import react from "react";
-import { Navbar } from "./Component/Navbar";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./Component/Home";
-import { About } from "./Component/About";
-import { Contact } from "./Component/Contact";
-import CartComponent from './Components/CartComponent';
+// src/App.jsx
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 
+import { Navbar } from "./Component/Navbar";
+import { ProductSection } from "./Component/ProductSection";
+import { AudioSection } from "./Component/AudioSection";
+import { CameraLensSection } from "./Component/CameraLensSection";
+import { NewsletterFooter } from "./Component/NewsletterFooter";
 
 export const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<CartComponent />} />
-      </Routes>
-    </div>
+   
+      <div>
+        <Navbar />
+        <ProductSection />
+        <AudioSection />
+        <CameraLensSection />
+        <NewsletterFooter />
+      </div>
   );
 };
 export default App;

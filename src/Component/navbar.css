@@ -1,0 +1,212 @@
+.Topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #fff;
+}
+.logo h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: #1c252e;
+  text-transform: uppercase;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+.icon {
+  font-size: 1.4rem;
+  color: #1c252e;
+  cursor: pointer;
+  transition: color .2s ease;
+  margin: 8px;
+}
+.icon:hover { color: #e63946; }
+.icon-container { position: relative; display: inline-block; }
+.badge {
+  position: absolute; top: -6px; right: -10px;
+  background: #e63946; color: #fff;
+  font-size: .68rem; font-weight: 700;
+  border-radius: 999px; padding: 1px 6px; line-height: 1;
+}
+.cart {
+  display: flex; align-items: center; gap: 8px;
+}
+.cart-icon {
+  position: relative; display: inline-block; margin-right: 10px;
+}
+.cart-text {
+  display: flex; flex-direction: column; font-size: .8rem; color: #1c252e; line-height: 1.2;
+}
+.cart-text span:first-child {
+  font-weight: 600;
+}
+.cart-text .price {
+  color: #777; font-size: .75rem;
+}
+
+.Menubar {
+  background: #1c252e;
+  border-bottom: 1px solid #ddd;
+}
+.Menubar .container {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.menu-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.menu-scroll::-webkit-scrollbar { display: none; }
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  display: inline-block;
+  transition: color .2s ease;
+}
+.menu a:hover, a.active { color: #e63946; }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: #1c252e;
+  cursor: pointer;
+  margin-left: 16px;
+  z-index: 1201;
+}
+
+@media (max-width: 992px) {
+  .logo h1 { font-size: 1.4rem; }
+  .actions { gap: 16px; }
+}
+
+@media (max-width: 768px) {
+  .Topbar { padding: 10px 16px; }
+  .Menubar .container { height: auto; padding: 0; }
+  .logo h1 { font-size: 1.25rem; letter-spacing: .08em; }
+  .icon { font-size: 1.2rem; margin: 6px; }
+  .cart-text { display: none; }
+  .actions { margin-right: 0; }
+  .menu-toggle { display: block; }
+  .Menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(28, 37, 46, 0.97);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1200;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 60px;
+    overflow-y: auto;
+  }
+  .Menubar.open {
+    transform: translateY(0);
+  }
+  .Menubar .container {
+    width: 100%;
+    padding: 0;
+    height: auto;
+  }
+  .menu-scroll {
+    width: 100%;
+    overflow: visible;
+  }
+  .menu {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0;
+  }
+  .menu li {
+    width: 100%;
+    border-bottom: 1px solid #222;
+  }
+  .menu a {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    color: #fff;
+    background: none;
+    text-align: left;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle { display: none !important; }
+  .Menubar {
+    position: static !important;
+    height: auto !important;
+    background: #1c252e;
+    transform: none !important;
+    display: block !important;
+    padding-top: 0 !important;
+    width: 100%;
+  }
+  .Menubar .container {
+    height: 56px;
+    padding: 0 24px;
+  }
+  .menu {
+    flex-direction: row !important;
+    gap: 36px !important;
+    align-items: center !important;
+    width: auto !important;
+  }
+  .menu li {
+    border-bottom: none !important;
+    width: auto !important;
+  }
+  .menu a {
+    color: #fff;
+    background: none;
+    text-align: center;
+    font-size: .95rem;
+    padding: 10px 0;
+  }
+  .Topbar .actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .Topbar { padding: 8px 12px; }
+  .Menubar .container { height: 48px; padding: 0 12px; }
+  .logo h1 { font-size: 1.05rem; }
+  .icon { font-size: 1.05rem; }
+  .badge { top: -5px; right: -8px; font-size: .62rem; padding: 1px 5px; }
+  .menu { gap: 18px; }
+  .menu a { font-size: .9rem; padding: 9px 0; }
+}
