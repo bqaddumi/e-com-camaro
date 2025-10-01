@@ -7,8 +7,8 @@ import "../css/ProductPage.css";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const product = PRODUCTS.find((p) => String(p.id) === String(id));
-  const dispatch = useDispatch();
+  const product = PRODUCTS.find((product) => product.id=== id);
+  const dispatch = useDispatch(); 
 
   if (!product)
     return <div className="product-not-found">Product not found.</div>;

@@ -11,18 +11,22 @@ function CartComponent() {
     dispatch(addItem({ id, name, image }));
   };
   const handleRemove = (id) => {
-    dispatch(removeItem(id));
-  };
+  dispatch({
+    type: removeItem.type,
+    payload: id,
+  });
+};
+
   return (
     <div className="cart-container">
       <div className="product-action">
-        {PRODUCTS.map((p) => (
+        {PRODUCTS.map((product) => (
           <button
-            key={p.id}
+            key={product.id}
             className="cart-add-btn"
-            onClick={() => handleAdd(p.id, p.name, p.image)}
+            onClick={() => handleAdd(product.id, product.name, product.image)}
           >
-            Add {p.name}
+            Add {product.name}
           </button>
         ))}
       </div>
