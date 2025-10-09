@@ -1,24 +1,15 @@
-import react from "react";
-import { Navbar } from "./Component/Navbar";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./Component/Home";
-import { About } from "./Component/About";
-import { Contact } from "./Component/Contact";
-import CartComponent from './Components/CartComponent';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import CartComponent from "./Component/CartComponent/CartComponent";
+import ProductPage from "./Component/ProductPage/ProductPage";
 
-
-export const App = () => {
+export default function App() {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<CartComponent />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/product/2" replace />} />
+      <Route path="/product/:id" element={<ProductPage />} />
+      <Route path="/cart" element={<CartComponent />} />
+      <Route path="*" element={<div style={{ padding: 16 }}>Not Found</div>} />
+    </Routes>
   );
-};
-export default App;
+}
