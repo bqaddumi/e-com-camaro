@@ -1,23 +1,13 @@
-// src/App.jsx
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
-import { Navbar } from "./Component/Navbar";
-import { ProductSection } from "./Component/ProductSection";
-import { AudioSection } from "./Component/AudioSection";
-import { CameraLensSection } from "./Component/CameraLensSection";
-import { NewsletterFooter } from "./Component/NewsletterFooter";
-
-export const App = () => {
+export default function App() {
   return (
-   
-      <div>
-        <Navbar />
-        <ProductSection />
-        <AudioSection />
-        <CameraLensSection />
-        <NewsletterFooter />
-      </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
   );
-};
-export default App;
+}

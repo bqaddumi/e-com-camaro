@@ -1,3 +1,25 @@
+.logo-title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #1c252e;
+  text-transform: uppercase;
+}
+.menubar-row {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+.cart-title {
+  font-weight: 600;
+}
+
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
 .Topbar {
   display: flex;
   align-items: center;
@@ -5,14 +27,7 @@
   padding: 12px 24px;
   background: #fff;
 }
-.logo h1 {
-  margin: 0;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: .1em;
-  color: #1c252e;
-  text-transform: uppercase;
-}
+
 .actions {
   display: flex;
   align-items: center;
@@ -20,45 +35,51 @@
   margin-left: auto;
 }
 .icon {
-  font-size: 1.4rem;
+  font-size: 24px;
   color: #1c252e;
   cursor: pointer;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
   margin: 8px;
 }
-.icon:hover { color: #e63946; }
-.icon-container { position: relative; display: inline-block; }
+.icon:hover {
+  color: #e63946;
+}
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
 .badge {
-  position: absolute; top: -6px; right: -10px;
-  background: #e63946; color: #fff;
-  font-size: .68rem; font-weight: 700;
-  border-radius: 999px; padding: 1px 6px; line-height: 1;
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #e63946;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 6px;
+  line-height: 1;
 }
 .cart {
-  display: flex; align-items: center; gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .cart-icon {
-  position: relative; display: inline-block; margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
 }
 .cart-text {
-  display: flex; flex-direction: column; font-size: .8rem; color: #1c252e; line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: #1c252e;
+  line-height: 1.2;
 }
-.cart-text span:first-child {
-  font-weight: 600;
-}
-.cart-text .price {
-  color: #777; font-size: .75rem;
-}
-
 .Menubar {
   background: #1c252e;
   border-bottom: 1px solid #ddd;
-}
-.Menubar .container {
-  height: 56px;
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
 }
 .menu-scroll {
   width: 100%;
@@ -66,7 +87,9 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
-.menu-scroll::-webkit-scrollbar { display: none; }
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
 .menu {
   display: flex;
   align-items: center;
@@ -80,20 +103,23 @@
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  font-size: .95rem;
-  letter-spacing: .5px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 10px 0;
   display: inline-block;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
-.menu a:hover, a.active { color: #e63946; }
+.menu a:hover,
+.menu a.active {
+  color: #e63946;
+}
 
 .menu-toggle {
+  font-size: 27px;
   display: none;
   background: none;
   border: none;
-  font-size: 1.7rem;
   color: #1c252e;
   cursor: pointer;
   margin-left: 16px;
@@ -101,18 +127,39 @@
 }
 
 @media (max-width: 992px) {
-  .logo h1 { font-size: 1.4rem; }
-  .actions { gap: 16px; }
+  .logo-title {
+    font-size: 22px;
+  }
+  .actions {
+    gap: 16px;
+  }
 }
 
 @media (max-width: 768px) {
-  .Topbar { padding: 10px 16px; }
-  .Menubar .container { height: auto; padding: 0; }
-  .logo h1 { font-size: 1.25rem; letter-spacing: .08em; }
-  .icon { font-size: 1.2rem; margin: 6px; }
-  .cart-text { display: none; }
-  .actions { margin-right: 0; }
-  .menu-toggle { display: block; }
+  .Topbar {
+    padding: 10px 16px;
+  }
+  .menubar-row {
+    height: auto;
+    padding: 0;
+  }
+  .logo-title {
+    font-size: 20px;
+    letter-spacing: 0.08em;
+  }
+  .icon {
+    font-size: 21px;
+    margin: 6px;
+  }
+  .cart-text {
+    display: none;
+  }
+  .actions {
+    margin-right: 0;
+  }
+  .menu-toggle {
+    display: block;
+  }
   .Menubar {
     position: fixed;
     top: 0;
@@ -133,7 +180,7 @@
   .Menubar.open {
     transform: translateY(0);
   }
-  .Menubar .container {
+  .menubar-row {
     width: 100%;
     padding: 0;
     height: auto;
@@ -157,7 +204,7 @@
     display: block;
     width: 100%;
     padding: 18px 24px;
-    font-size: 1.1rem;
+    font-size: 18px;
     color: #fff;
     background: none;
     text-align: left;
@@ -165,7 +212,9 @@
 }
 
 @media (min-width: 769px) {
-  .menu-toggle { display: none !important; }
+  .menu-toggle {
+    display: none !important;
+  }
   .Menubar {
     position: static !important;
     height: auto !important;
@@ -175,7 +224,7 @@
     padding-top: 0 !important;
     width: 100%;
   }
-  .Menubar .container {
+  .menubar-row {
     height: 56px;
     padding: 0 24px;
   }
@@ -193,20 +242,36 @@
     color: #fff;
     background: none;
     text-align: center;
-    font-size: .95rem;
+    font-size: 15px;
     padding: 10px 0;
-  }
-  .Topbar .actions {
-    margin-left: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .Topbar { padding: 8px 12px; }
-  .Menubar .container { height: 48px; padding: 0 12px; }
-  .logo h1 { font-size: 1.05rem; }
-  .icon { font-size: 1.05rem; }
-  .badge { top: -5px; right: -8px; font-size: .62rem; padding: 1px 5px; }
-  .menu { gap: 18px; }
-  .menu a { font-size: .9rem; padding: 9px 0; }
+  .Topbar {
+    padding: 8px 12px;
+  }
+  .menubar-row {
+    height: 48px;
+    padding: 0 12px;
+  }
+  .logo-title {
+    font-size: 17px;
+  }
+  .icon {
+    font-size: 19px;
+  }
+  .badge {
+    top: -5px;
+    right: -8px;
+    font-size: 10px;
+    padding: 1px 5px;
+  }
+  .menu {
+    gap: 18px;
+  }
+  .menu a {
+    font-size: 14px;
+    padding: 9px 0;
+  }
 }
